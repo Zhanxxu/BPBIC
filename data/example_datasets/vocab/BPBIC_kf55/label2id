@@ -1,0 +1,14 @@
+O	1
+B-Med	2
+I-Ins	3
+I-Ana	4
+I-Chk	5
+I-Med	6
+B-Chk	7
+I-Dsa	8
+B-Sur	9
+I-Sur	10
+B-Ins	11
+B-Ana	12
+B-Dsa	13
+[PAD]	0

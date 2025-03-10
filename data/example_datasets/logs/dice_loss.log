@@ -1,0 +1,795 @@
+2022-10-24 19:30:43
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY++++++++++++++++++++++++++++++++++++++++
+ Status:
+     mode                 : train
+ ++++++++++++++++++++++++++++++++++++++++
+ Datasets:
+     datasets         fold: data/example_datasets/datasets
+     train            file: train.csv
+     validation       file: None
+     vocab             dir: data/example_datasets/vocab/Train_Diceloss
+     delimiter            : b
+     use  pretrained model: True
+     pretrained      model: Bert
+     finetune             : False
+     use    middle   model: True
+     middle          model: bilstm+idcnn
+     checkpoints       dir: checkpoints/Train_Diceloss
+     log               dir: data/example_datasets/logs
+ ++++++++++++++++++++++++++++++++++++++++
+Labeling Scheme:
+     label          scheme: BIO
+     label           level: 2
+     suffixes             : ['Dsa', 'Chk', 'Ins', 'Sur', 'Med', 'Ana']
+     measuring     metrics: ['precision', 'recall', 'f1', 'accuracy']
+ ++++++++++++++++++++++++++++++++++++++++
+Model Configuration:
+     embedding         dim: 100
+     max  sequence  length: 100
+     hidden            dim: 128
+     filter           nums: 64
+     idcnn            nums: 3
+     CUDA  VISIBLE  DEVICE: 0
+     seed                 : 23
+ ++++++++++++++++++++++++++++++++++++++++
+ Training Settings:
+     epoch                : 100
+     batch            size: 8
+     dropout              : 0.3
+     learning         rate: 0.001
+     optimizer            : Adam
+     use               gan: True
+     gan            method: pgd
+     checkpoint       name: model_our
+     max       checkpoints: 3
+     print       per_batch: 20
+     is     early     stop: True
+     patient              : 5
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY END++++++++++++++++++++++++++++++++++++++++
+label vocab files not exist, building label vocab...
+dataManager initialed...
+mode: train
+loading data...
+validating set is not exist, built...
+training set size: 2401, validating set size: 267
+++++++++++++++++++++training starting++++++++++++++++++++
+epoch:1/100
+training batch:    20, loss: 118.34767, precision: 0.000 recall: 0.000 f1: 0.000 accuracy: 0.752 
+training batch:    40, loss: 69.92720, precision: 0.000 recall: 0.000 f1: 0.000 accuracy: 0.864 
+training batch:    60, loss: 49.01387, precision: 0.125 recall: 0.026 f1: 0.043 accuracy: 0.851 
+training batch:    80, loss: 29.75307, precision: 0.375 recall: 0.103 f1: 0.162 accuracy: 0.920 
+training batch:   100, loss: 37.09433, precision: 0.214 recall: 0.273 f1: 0.240 accuracy: 0.881 
+training batch:   120, loss: 26.75664, precision: 0.581 recall: 0.621 f1: 0.600 accuracy: 0.936 
+training batch:   140, loss: 24.83523, precision: 0.593 recall: 0.432 f1: 0.500 accuracy: 0.925 
+training batch:   160, loss: 20.52092, precision: 0.545 recall: 0.667 f1: 0.600 accuracy: 0.951 
+training batch:   180, loss: 37.91107, precision: 0.485 recall: 0.485 f1: 0.485 accuracy: 0.874 
+training batch:   200, loss: 18.82516, precision: 0.583 recall: 0.500 f1: 0.538 accuracy: 0.951 
+training batch:   220, loss: 28.62835, precision: 0.613 recall: 0.442 f1: 0.514 accuracy: 0.915 
+training batch:   240, loss: 18.70218, precision: 0.724 recall: 0.700 f1: 0.712 accuracy: 0.939 
+training batch:   260, loss: 10.05049, precision: 0.658 recall: 0.641 f1: 0.649 accuracy: 0.970 
+training batch:   280, loss: 12.48302, precision: 0.686 recall: 0.686 f1: 0.686 accuracy: 0.966 
+training batch:   300, loss: 52.28168, precision: 0.500 recall: 0.600 f1: 0.545 accuracy: 0.800 
+start evaluate engines...
+label: Dsa, precision: 0.635 recall: 0.713 f1: 0.667 
+label: Chk, precision: 0.294 recall: 0.216 f1: 0.240 
+label: Ins, precision: 0.000 recall: 0.000 f1: 0.000 
+label: Sur, precision: 0.857 recall: 0.794 f1: 0.816 
+label: Med, precision: 0.304 recall: 0.238 f1: 0.258 
+label: Ana, precision: 0.736 recall: 0.677 f1: 0.700 
+time consumption:3.66(min), precision: 0.732 recall: 0.671 f1: 0.699 accuracy: 0.951 
+saved the new best model with f1: 0.699
+epoch:2/100
+training batch:    20, loss: 13.15469, precision: 0.818 recall: 0.750 f1: 0.783 accuracy: 0.960 
+training batch:    40, loss: 9.20273, precision: 0.857 recall: 0.811 f1: 0.833 accuracy: 0.979 
+training batch:    60, loss: 14.76350, precision: 0.795 recall: 0.778 f1: 0.787 accuracy: 0.951 
+training batch:    80, loss: 11.02410, precision: 0.750 recall: 0.750 f1: 0.750 accuracy: 0.969 
+training batch:   100, loss: 16.52268, precision: 0.917 recall: 0.710 f1: 0.800 accuracy: 0.950 
+training batch:   120, loss: 21.04637, precision: 0.639 recall: 0.605 f1: 0.622 accuracy: 0.931 
+training batch:   140, loss: 20.55741, precision: 0.778 recall: 0.667 f1: 0.718 accuracy: 0.938 
+training batch:   160, loss: 14.09814, precision: 0.690 recall: 0.725 f1: 0.707 accuracy: 0.958 
+training batch:   180, loss: 26.61659, precision: 0.567 recall: 0.567 f1: 0.567 accuracy: 0.924 
+training batch:   200, loss: 13.87246, precision: 0.875 recall: 0.897 f1: 0.886 accuracy: 0.961 
+training batch:   220, loss: 10.52454, precision: 0.710 recall: 0.759 f1: 0.733 accuracy: 0.956 
+training batch:   240, loss: 13.07016, precision: 0.882 recall: 0.833 f1: 0.857 accuracy: 0.966 
+training batch:   260, loss: 7.90986, precision: 0.658 recall: 0.806 f1: 0.725 accuracy: 0.971 
+training batch:   280, loss: 20.38295, precision: 0.919 recall: 0.919 f1: 0.919 accuracy: 0.960 
+training batch:   300, loss: 10.84338, precision: 0.800 recall: 0.800 f1: 0.800 accuracy: 0.940 
+start evaluate engines...
+label: Dsa, precision: 0.748 recall: 0.789 f1: 0.766 
+label: Chk, precision: 0.581 recall: 0.591 f1: 0.571 
+label: Ins, precision: 0.320 recall: 0.386 f1: 0.342 
+label: Sur, precision: 0.889 recall: 0.862 f1: 0.870 
+label: Med, precision: 0.419 recall: 0.434 f1: 0.424 
+label: Ana, precision: 0.835 recall: 0.808 f1: 0.816 
+time consumption:3.86(min), precision: 0.813 recall: 0.812 f1: 0.811 accuracy: 0.970 
+saved the new best model with f1: 0.811
+epoch:3/100
+training batch:    20, loss: 8.36009, precision: 0.839 recall: 0.812 f1: 0.825 accuracy: 0.976 
+training batch:    40, loss: 8.61060, precision: 0.818 recall: 0.771 f1: 0.794 accuracy: 0.975 
+training batch:    60, loss: 15.22296, precision: 0.964 recall: 0.844 f1: 0.900 accuracy: 0.974 
+training batch:    80, loss: 12.68000, precision: 0.476 recall: 0.455 f1: 0.465 accuracy: 0.953 
+training batch:   100, loss: 6.80582, precision: 0.848 recall: 0.824 f1: 0.836 accuracy: 0.974 
+training batch:   120, loss: 6.23857, precision: 0.909 recall: 0.870 f1: 0.889 accuracy: 0.980 
+training batch:   140, loss: 10.21404, precision: 0.676 recall: 0.735 f1: 0.704 accuracy: 0.959 
+training batch:   160, loss: 10.27320, precision: 0.649 recall: 0.800 f1: 0.716 accuracy: 0.966 
+training batch:   180, loss: 10.01809, precision: 0.784 recall: 0.763 f1: 0.773 accuracy: 0.961 
+training batch:   200, loss: 5.73235, precision: 0.864 recall: 0.884 f1: 0.874 accuracy: 0.975 
+training batch:   220, loss: 7.26691, precision: 0.765 recall: 0.722 f1: 0.743 accuracy: 0.973 
+training batch:   240, loss: 4.18753, precision: 0.828 recall: 0.828 f1: 0.828 accuracy: 0.986 
+training batch:   260, loss: 11.70522, precision: 0.762 recall: 0.744 f1: 0.753 accuracy: 0.963 
+training batch:   280, loss: 7.24694, precision: 0.829 recall: 0.829 f1: 0.829 accuracy: 0.974 
+training batch:   300, loss: 5.65198, precision: 0.714 recall: 0.714 f1: 0.714 accuracy: 0.960 
+start evaluate engines...
+label: Dsa, precision: 0.796 recall: 0.838 f1: 0.812 
+label: Chk, precision: 0.627 recall: 0.642 f1: 0.627 
+label: Ins, precision: 0.323 recall: 0.290 f1: 0.300 
+label: Sur, precision: 0.875 recall: 0.838 f1: 0.849 
+label: Med, precision: 0.463 recall: 0.463 f1: 0.463 
+label: Ana, precision: 0.852 recall: 0.830 f1: 0.837 
+time consumption:4.18(min), precision: 0.849 recall: 0.830 f1: 0.838 accuracy: 0.973 
+saved the new best model with f1: 0.838
+epoch:4/100
+training batch:    20, loss: 7.91085, precision: 0.706 recall: 0.766 f1: 0.735 accuracy: 0.970 
+training batch:    40, loss: 13.60364, precision: 0.805 recall: 0.846 f1: 0.825 accuracy: 0.950 
+training batch:    60, loss: 5.36795, precision: 0.810 recall: 0.829 f1: 0.819 accuracy: 0.985 
+training batch:    80, loss: 9.40034, precision: 0.892 recall: 0.846 f1: 0.868 accuracy: 0.978 
+training batch:   100, loss: 4.53388, precision: 0.886 recall: 0.867 f1: 0.876 accuracy: 0.984 
+training batch:   120, loss: 5.61533, precision: 1.000 recall: 0.889 f1: 0.941 accuracy: 0.989 
+training batch:   140, loss: 11.94034, precision: 0.833 recall: 0.781 f1: 0.806 accuracy: 0.969 
+training batch:   160, loss: 5.95683, precision: 0.821 recall: 0.842 f1: 0.831 accuracy: 0.973 
+training batch:   180, loss: 6.52782, precision: 0.852 recall: 0.793 f1: 0.821 accuracy: 0.974 
+training batch:   200, loss: 9.58737, precision: 0.879 recall: 0.879 f1: 0.879 accuracy: 0.984 
+training batch:   220, loss: 3.42982, precision: 0.857 recall: 0.882 f1: 0.870 accuracy: 0.984 
+training batch:   240, loss: 10.07722, precision: 0.810 recall: 0.791 f1: 0.800 accuracy: 0.979 
+training batch:   260, loss: 3.67718, precision: 0.935 recall: 1.000 f1: 0.967 accuracy: 0.988 
+training batch:   280, loss: 12.29404, precision: 0.613 recall: 0.826 f1: 0.704 accuracy: 0.951 
+training batch:   300, loss: 1.07568, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.806 recall: 0.868 f1: 0.832 
+label: Chk, precision: 0.664 recall: 0.667 f1: 0.660 
+label: Ins, precision: 0.311 recall: 0.367 f1: 0.324 
+label: Sur, precision: 0.888 recall: 0.880 f1: 0.877 
+label: Med, precision: 0.426 recall: 0.441 f1: 0.431 
+label: Ana, precision: 0.818 recall: 0.834 f1: 0.823 
+time consumption:4.18(min), precision: 0.822 recall: 0.855 f1: 0.837 accuracy: 0.972 
+epoch:5/100
+training batch:    20, loss: 4.97664, precision: 0.923 recall: 0.900 f1: 0.911 accuracy: 0.985 
+training batch:    40, loss: 9.03001, precision: 0.850 recall: 0.971 f1: 0.907 accuracy: 0.971 
+training batch:    60, loss: 5.84758, precision: 0.806 recall: 0.829 f1: 0.817 accuracy: 0.974 
+training batch:    80, loss: 8.66103, precision: 0.868 recall: 0.846 f1: 0.857 accuracy: 0.978 
+training batch:   100, loss: 6.00912, precision: 0.765 recall: 0.839 f1: 0.800 accuracy: 0.981 
+training batch:   120, loss: 7.52899, precision: 0.871 recall: 0.871 f1: 0.871 accuracy: 0.973 
+training batch:   140, loss: 9.79640, precision: 0.824 recall: 0.848 f1: 0.836 accuracy: 0.970 
+training batch:   160, loss: 2.66866, precision: 0.919 recall: 0.944 f1: 0.932 accuracy: 0.993 
+training batch:   180, loss: 4.29948, precision: 0.840 recall: 0.778 f1: 0.808 accuracy: 0.976 
+training batch:   200, loss: 6.47279, precision: 0.812 recall: 0.886 f1: 0.848 accuracy: 0.974 
+training batch:   220, loss: 5.68826, precision: 0.841 recall: 0.822 f1: 0.831 accuracy: 0.971 
+training batch:   240, loss: 8.05627, precision: 0.929 recall: 0.897 f1: 0.912 accuracy: 0.971 
+training batch:   260, loss: 10.01928, precision: 0.844 recall: 0.750 f1: 0.794 accuracy: 0.950 
+training batch:   280, loss: 3.41170, precision: 0.939 recall: 0.939 f1: 0.939 accuracy: 0.985 
+training batch:   300, loss: 2.25671, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.891 recall: 0.861 f1: 0.872 
+label: Chk, precision: 0.640 recall: 0.701 f1: 0.660 
+label: Ins, precision: 0.379 recall: 0.411 f1: 0.387 
+label: Sur, precision: 0.880 recall: 0.892 f1: 0.881 
+label: Med, precision: 0.412 recall: 0.412 f1: 0.412 
+label: Ana, precision: 0.853 recall: 0.894 f1: 0.871 
+time consumption:4.12(min), precision: 0.874 recall: 0.887 f1: 0.880 accuracy: 0.980 
+saved the new best model with f1: 0.880
+epoch:6/100
+training batch:    20, loss: 2.83006, precision: 0.848 recall: 0.848 f1: 0.848 accuracy: 0.990 
+training batch:    40, loss: 2.94441, precision: 0.909 recall: 0.909 f1: 0.909 accuracy: 0.990 
+training batch:    60, loss: 5.93520, precision: 0.967 recall: 0.829 f1: 0.892 accuracy: 0.970 
+training batch:    80, loss: 4.77696, precision: 0.800 recall: 0.857 f1: 0.828 accuracy: 0.979 
+training batch:   100, loss: 1.51677, precision: 0.957 recall: 0.978 f1: 0.967 accuracy: 0.995 
+training batch:   120, loss: 3.78593, precision: 0.927 recall: 0.950 f1: 0.938 accuracy: 0.985 
+training batch:   140, loss: 3.38138, precision: 0.879 recall: 0.879 f1: 0.879 accuracy: 0.986 
+training batch:   160, loss: 3.12032, precision: 0.838 recall: 0.912 f1: 0.873 accuracy: 0.988 
+training batch:   180, loss: 3.99631, precision: 0.875 recall: 0.966 f1: 0.918 accuracy: 0.993 
+training batch:   200, loss: 2.22142, precision: 0.923 recall: 0.973 f1: 0.947 accuracy: 0.991 
+training batch:   220, loss: 4.21064, precision: 0.677 recall: 0.778 f1: 0.724 accuracy: 0.983 
+training batch:   240, loss: 3.66600, precision: 0.853 recall: 0.853 f1: 0.853 accuracy: 0.978 
+training batch:   260, loss: 9.05057, precision: 0.784 recall: 0.744 f1: 0.763 accuracy: 0.963 
+training batch:   280, loss: 2.41064, precision: 0.933 recall: 0.933 f1: 0.933 accuracy: 0.991 
+training batch:   300, loss: 19.06287, precision: 0.500 recall: 0.500 f1: 0.500 accuracy: 0.940 
+start evaluate engines...
+label: Dsa, precision: 0.816 recall: 0.895 f1: 0.850 
+label: Chk, precision: 0.694 recall: 0.718 f1: 0.702 
+label: Ins, precision: 0.370 recall: 0.417 f1: 0.384 
+label: Sur, precision: 0.913 recall: 0.922 f1: 0.915 
+label: Med, precision: 0.500 recall: 0.500 f1: 0.500 
+label: Ana, precision: 0.877 recall: 0.888 f1: 0.879 
+time consumption:4.17(min), precision: 0.869 recall: 0.901 f1: 0.884 accuracy: 0.982 
+saved the new best model with f1: 0.884
+epoch:7/100
+training batch:    20, loss: 4.17378, precision: 0.920 recall: 0.767 f1: 0.836 accuracy: 0.991 
+training batch:    40, loss: 2.10889, precision: 0.906 recall: 0.879 f1: 0.892 accuracy: 0.994 
+training batch:    60, loss: 3.25638, precision: 0.929 recall: 0.886 f1: 0.907 accuracy: 0.990 
+training batch:    80, loss: 2.71480, precision: 0.905 recall: 0.974 f1: 0.938 accuracy: 0.991 
+training batch:   100, loss: 2.28569, precision: 0.956 recall: 0.956 f1: 0.956 accuracy: 0.995 
+training batch:   120, loss: 2.91739, precision: 0.882 recall: 0.938 f1: 0.909 accuracy: 0.985 
+training batch:   140, loss: 2.25723, precision: 0.912 recall: 0.912 f1: 0.912 accuracy: 0.991 
+training batch:   160, loss: 2.86580, precision: 0.829 recall: 0.944 f1: 0.883 accuracy: 0.990 
+training batch:   180, loss: 6.35319, precision: 0.871 recall: 0.794 f1: 0.831 accuracy: 0.971 
+training batch:   200, loss: 1.28593, precision: 0.951 recall: 0.951 f1: 0.951 accuracy: 0.995 
+training batch:   220, loss: 4.04623, precision: 0.732 recall: 0.769 f1: 0.750 accuracy: 0.983 
+training batch:   240, loss: 4.93016, precision: 0.932 recall: 0.932 f1: 0.932 accuracy: 0.989 
+training batch:   260, loss: 5.03798, precision: 0.882 recall: 0.882 f1: 0.882 accuracy: 0.975 
+training batch:   280, loss: 0.89417, precision: 0.923 recall: 0.923 f1: 0.923 accuracy: 0.996 
+training batch:   300, loss: 4.65228, precision: 0.667 recall: 0.667 f1: 0.667 accuracy: 0.990 
+start evaluate engines...
+label: Dsa, precision: 0.878 recall: 0.895 f1: 0.884 
+label: Chk, precision: 0.711 recall: 0.721 f1: 0.713 
+label: Ins, precision: 0.380 recall: 0.417 f1: 0.389 
+label: Sur, precision: 0.931 recall: 0.941 f1: 0.933 
+label: Med, precision: 0.493 recall: 0.493 f1: 0.493 
+label: Ana, precision: 0.902 recall: 0.910 f1: 0.904 
+time consumption:4.14(min), precision: 0.904 recall: 0.911 f1: 0.907 accuracy: 0.984 
+saved the new best model with f1: 0.907
+epoch:8/100
+training batch:    20, loss: 1.37804, precision: 0.923 recall: 0.960 f1: 0.941 accuracy: 0.996 
+training batch:    40, loss: 5.88901, precision: 0.789 recall: 0.909 f1: 0.845 accuracy: 0.973 
+training batch:    60, loss: 3.68642, precision: 0.833 recall: 0.833 f1: 0.833 accuracy: 0.989 
+training batch:    80, loss: 1.58913, precision: 0.969 recall: 0.939 f1: 0.954 accuracy: 0.995 
+training batch:   100, loss: 2.86197, precision: 0.879 recall: 0.879 f1: 0.879 accuracy: 0.990 
+training batch:   120, loss: 1.53348, precision: 1.000 recall: 0.939 f1: 0.969 accuracy: 0.988 
+training batch:   140, loss: 2.10704, precision: 0.975 recall: 1.000 f1: 0.987 accuracy: 0.995 
+training batch:   160, loss: 5.44806, precision: 0.932 recall: 0.932 f1: 0.932 accuracy: 0.981 
+training batch:   180, loss: 4.02695, precision: 0.839 recall: 0.812 f1: 0.825 accuracy: 0.970 
+training batch:   200, loss: 2.26262, precision: 0.950 recall: 0.974 f1: 0.962 accuracy: 0.995 
+training batch:   220, loss: 5.99663, precision: 0.811 recall: 0.750 f1: 0.779 accuracy: 0.971 
+training batch:   240, loss: 1.99742, precision: 0.938 recall: 0.938 f1: 0.938 accuracy: 0.994 
+training batch:   260, loss: 2.85518, precision: 0.839 recall: 0.929 f1: 0.881 accuracy: 0.990 
+training batch:   280, loss: 2.39442, precision: 0.896 recall: 0.896 f1: 0.896 accuracy: 0.990 
+training batch:   300, loss: 4.31348, precision: 0.750 recall: 1.000 f1: 0.857 accuracy: 0.990 
+start evaluate engines...
+label: Dsa, precision: 0.884 recall: 0.923 f1: 0.900 
+label: Chk, precision: 0.713 recall: 0.728 f1: 0.718 
+label: Ins, precision: 0.389 recall: 0.425 f1: 0.393 
+label: Sur, precision: 0.904 recall: 0.911 f1: 0.904 
+label: Med, precision: 0.529 recall: 0.559 f1: 0.539 
+label: Ana, precision: 0.893 recall: 0.905 f1: 0.898 
+time consumption:4.13(min), precision: 0.897 recall: 0.919 f1: 0.908 accuracy: 0.985 
+saved the new best model with f1: 0.908
+epoch:9/100
+training batch:    20, loss: 6.32840, precision: 0.889 recall: 0.941 f1: 0.914 accuracy: 0.974 
+training batch:    40, loss: 2.45671, precision: 0.854 recall: 0.921 f1: 0.886 accuracy: 0.986 
+training batch:    60, loss: 5.13094, precision: 0.953 recall: 0.872 f1: 0.911 accuracy: 0.981 
+training batch:    80, loss: 1.60001, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.994 
+training batch:   100, loss: 1.69957, precision: 0.935 recall: 0.935 f1: 0.935 accuracy: 0.993 
+training batch:   120, loss: 1.02458, precision: 0.923 recall: 0.800 f1: 0.857 accuracy: 0.995 
+training batch:   140, loss: 5.28731, precision: 0.875 recall: 0.824 f1: 0.848 accuracy: 0.971 
+training batch:   160, loss: 3.93053, precision: 0.919 recall: 0.895 f1: 0.907 accuracy: 0.981 
+training batch:   180, loss: 1.23969, precision: 0.852 recall: 0.885 f1: 0.868 accuracy: 0.993 
+training batch:   200, loss: 2.81065, precision: 0.902 recall: 0.925 f1: 0.914 accuracy: 0.988 
+training batch:   220, loss: 0.79752, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   240, loss: 3.81006, precision: 0.846 recall: 0.846 f1: 0.846 accuracy: 0.988 
+training batch:   260, loss: 2.11613, precision: 0.929 recall: 0.929 f1: 0.929 accuracy: 0.988 
+training batch:   280, loss: 4.25780, precision: 0.911 recall: 0.837 f1: 0.872 accuracy: 0.983 
+training batch:   300, loss: 7.88574, precision: 1.000 recall: 0.857 f1: 0.923 accuracy: 0.980 
+start evaluate engines...
+label: Dsa, precision: 0.950 recall: 0.941 f1: 0.945 
+label: Chk, precision: 0.681 recall: 0.735 f1: 0.700 
+label: Ins, precision: 0.385 recall: 0.431 f1: 0.398 
+label: Sur, precision: 0.945 recall: 0.970 f1: 0.956 
+label: Med, precision: 0.441 recall: 0.441 f1: 0.441 
+label: Ana, precision: 0.906 recall: 0.922 f1: 0.913 
+time consumption:4.16(min), precision: 0.928 recall: 0.938 f1: 0.933 accuracy: 0.990 
+saved the new best model with f1: 0.933
+epoch:10/100
+training batch:    20, loss: 1.60616, precision: 0.958 recall: 1.000 f1: 0.979 accuracy: 0.998 
+training batch:    40, loss: 1.10574, precision: 0.974 recall: 0.974 f1: 0.974 accuracy: 0.993 
+training batch:    60, loss: 2.40591, precision: 0.900 recall: 0.923 f1: 0.911 accuracy: 0.990 
+training batch:    80, loss: 3.77332, precision: 0.882 recall: 0.938 f1: 0.909 accuracy: 0.985 
+training batch:   100, loss: 0.83119, precision: 1.000 recall: 0.975 f1: 0.987 accuracy: 0.996 
+training batch:   120, loss: 1.13560, precision: 0.971 recall: 1.000 f1: 0.985 accuracy: 0.995 
+training batch:   140, loss: 3.31058, precision: 0.970 recall: 0.941 f1: 0.955 accuracy: 0.990 
+training batch:   160, loss: 2.82187, precision: 0.889 recall: 0.970 f1: 0.928 accuracy: 0.985 
+training batch:   180, loss: 2.02522, precision: 0.917 recall: 0.917 f1: 0.917 accuracy: 0.995 
+training batch:   200, loss: 2.65335, precision: 0.844 recall: 0.871 f1: 0.857 accuracy: 0.989 
+training batch:   220, loss: 1.99068, precision: 0.979 recall: 0.958 f1: 0.968 accuracy: 0.990 
+training batch:   240, loss: 3.10515, precision: 0.895 recall: 0.919 f1: 0.907 accuracy: 0.984 
+training batch:   260, loss: 3.48753, precision: 0.944 recall: 0.944 f1: 0.944 accuracy: 0.989 
+training batch:   280, loss: 0.98564, precision: 0.970 recall: 0.970 f1: 0.970 accuracy: 0.990 
+training batch:   300, loss: 0.67883, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.905 recall: 0.927 f1: 0.914 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.373 recall: 0.426 f1: 0.390 
+label: Sur, precision: 0.930 recall: 0.949 f1: 0.937 
+label: Med, precision: 0.441 recall: 0.441 f1: 0.441 
+label: Ana, precision: 0.913 recall: 0.946 f1: 0.928 
+time consumption:4.15(min), precision: 0.916 recall: 0.941 f1: 0.928 accuracy: 0.989 
+epoch:11/100
+training batch:    20, loss: 3.69031, precision: 0.853 recall: 0.935 f1: 0.892 accuracy: 0.985 
+training batch:    40, loss: 2.57056, precision: 0.897 recall: 0.833 f1: 0.864 accuracy: 0.988 
+training batch:    60, loss: 1.71700, precision: 0.951 recall: 0.975 f1: 0.963 accuracy: 0.998 
+training batch:    80, loss: 0.43106, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.999 
+training batch:   100, loss: 4.42288, precision: 0.941 recall: 0.970 f1: 0.955 accuracy: 0.983 
+training batch:   120, loss: 1.50017, precision: 0.912 recall: 0.969 f1: 0.939 accuracy: 0.995 
+training batch:   140, loss: 1.51328, precision: 0.935 recall: 0.967 f1: 0.951 accuracy: 0.994 
+training batch:   160, loss: 7.88322, precision: 0.838 recall: 0.838 f1: 0.838 accuracy: 0.978 
+training batch:   180, loss: 1.09911, precision: 0.969 recall: 0.939 f1: 0.954 accuracy: 0.998 
+training batch:   200, loss: 1.18105, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.999 
+training batch:   220, loss: 1.54912, precision: 0.917 recall: 0.971 f1: 0.943 accuracy: 0.996 
+training batch:   240, loss: 1.75301, precision: 0.955 recall: 1.000 f1: 0.977 accuracy: 0.994 
+training batch:   260, loss: 5.88000, precision: 0.939 recall: 0.886 f1: 0.912 accuracy: 0.979 
+training batch:   280, loss: 7.56165, precision: 0.974 recall: 0.950 f1: 0.962 accuracy: 0.968 
+training batch:   300, loss: 0.36450, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.912 recall: 0.936 f1: 0.923 
+label: Chk, precision: 0.721 recall: 0.735 f1: 0.725 
+label: Ins, precision: 0.402 recall: 0.456 f1: 0.420 
+label: Sur, precision: 0.967 recall: 0.967 f1: 0.966 
+label: Med, precision: 0.515 recall: 0.529 f1: 0.520 
+label: Ana, precision: 0.933 recall: 0.940 f1: 0.936 
+time consumption:4.12(min), precision: 0.927 recall: 0.946 f1: 0.936 accuracy: 0.991 
+saved the new best model with f1: 0.936
+epoch:12/100
+training batch:    20, loss: 0.83881, precision: 0.939 recall: 0.939 f1: 0.939 accuracy: 0.998 
+training batch:    40, loss: 1.88083, precision: 0.865 recall: 0.970 f1: 0.914 accuracy: 0.991 
+training batch:    60, loss: 1.11610, precision: 0.976 recall: 0.953 f1: 0.965 accuracy: 0.995 
+training batch:    80, loss: 0.29721, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   100, loss: 5.56612, precision: 0.846 recall: 0.892 f1: 0.868 accuracy: 0.965 
+training batch:   120, loss: 1.67165, precision: 0.957 recall: 0.957 f1: 0.957 accuracy: 0.990 
+training batch:   140, loss: 1.55856, precision: 0.933 recall: 1.000 f1: 0.966 accuracy: 0.994 
+training batch:   160, loss: 1.51051, precision: 0.946 recall: 0.946 f1: 0.946 accuracy: 0.996 
+training batch:   180, loss: 1.47139, precision: 0.972 recall: 0.921 f1: 0.946 accuracy: 0.996 
+training batch:   200, loss: 1.23418, precision: 0.935 recall: 0.967 f1: 0.951 accuracy: 0.995 
+training batch:   220, loss: 0.15007, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 1.76711, precision: 0.974 recall: 0.974 f1: 0.974 accuracy: 0.994 
+training batch:   260, loss: 6.12029, precision: 0.951 recall: 0.886 f1: 0.918 accuracy: 0.984 
+training batch:   280, loss: 2.47975, precision: 0.909 recall: 0.938 f1: 0.923 accuracy: 0.985 
+training batch:   300, loss: 5.15027, precision: 1.000 recall: 0.833 f1: 0.909 accuracy: 0.980 
+start evaluate engines...
+label: Dsa, precision: 0.905 recall: 0.939 f1: 0.920 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.412 recall: 0.471 f1: 0.425 
+label: Sur, precision: 0.953 recall: 0.957 f1: 0.953 
+label: Med, precision: 0.500 recall: 0.500 f1: 0.500 
+label: Ana, precision: 0.950 recall: 0.928 f1: 0.938 
+time consumption:4.15(min), precision: 0.936 recall: 0.940 f1: 0.938 accuracy: 0.990 
+saved the new best model with f1: 0.938
+epoch:13/100
+training batch:    20, loss: 2.02548, precision: 0.938 recall: 0.938 f1: 0.938 accuracy: 0.998 
+training batch:    40, loss: 2.37056, precision: 0.927 recall: 0.927 f1: 0.927 accuracy: 0.986 
+training batch:    60, loss: 0.62753, precision: 0.967 recall: 1.000 f1: 0.983 accuracy: 0.999 
+training batch:    80, loss: 1.30977, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.993 
+training batch:   100, loss: 5.39336, precision: 0.972 recall: 0.972 f1: 0.972 accuracy: 0.989 
+training batch:   120, loss: 1.72009, precision: 1.000 recall: 0.972 f1: 0.986 accuracy: 0.989 
+training batch:   140, loss: 1.94348, precision: 0.919 recall: 0.944 f1: 0.932 accuracy: 0.989 
+training batch:   160, loss: 0.88292, precision: 0.969 recall: 0.969 f1: 0.969 accuracy: 0.998 
+training batch:   180, loss: 2.96988, precision: 0.976 recall: 0.953 f1: 0.965 accuracy: 0.988 
+training batch:   200, loss: 0.71468, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   220, loss: 3.39685, precision: 0.841 recall: 0.860 f1: 0.851 accuracy: 0.983 
+training batch:   240, loss: 0.99506, precision: 0.879 recall: 0.906 f1: 0.892 accuracy: 0.995 
+training batch:   260, loss: 1.25436, precision: 0.950 recall: 0.974 f1: 0.962 accuracy: 0.993 
+training batch:   280, loss: 1.14238, precision: 0.926 recall: 0.926 f1: 0.926 accuracy: 0.995 
+training batch:   300, loss: 3.16895, precision: 0.857 recall: 0.857 f1: 0.857 accuracy: 0.990 
+start evaluate engines...
+label: Dsa, precision: 0.918 recall: 0.946 f1: 0.930 
+label: Chk, precision: 0.701 recall: 0.721 f1: 0.707 
+label: Ins, precision: 0.400 recall: 0.453 f1: 0.417 
+label: Sur, precision: 0.973 recall: 0.973 f1: 0.972 
+label: Med, precision: 0.490 recall: 0.500 f1: 0.494 
+label: Ana, precision: 0.927 recall: 0.943 f1: 0.934 
+time consumption:4.17(min), precision: 0.932 recall: 0.951 f1: 0.941 accuracy: 0.991 
+saved the new best model with f1: 0.941
+epoch:14/100
+training batch:    20, loss: 0.81271, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.996 
+training batch:    40, loss: 0.70341, precision: 0.962 recall: 1.000 f1: 0.980 accuracy: 0.999 
+training batch:    60, loss: 2.12985, precision: 0.897 recall: 0.897 f1: 0.897 accuracy: 0.994 
+training batch:    80, loss: 2.31815, precision: 0.938 recall: 0.909 f1: 0.923 accuracy: 0.989 
+training batch:   100, loss: 1.24043, precision: 0.976 recall: 0.976 f1: 0.976 accuracy: 0.996 
+training batch:   120, loss: 1.79710, precision: 0.927 recall: 0.950 f1: 0.938 accuracy: 0.985 
+training batch:   140, loss: 0.59196, precision: 1.000 recall: 0.974 f1: 0.987 accuracy: 0.999 
+training batch:   160, loss: 1.11523, precision: 0.976 recall: 0.976 f1: 0.976 accuracy: 0.993 
+training batch:   180, loss: 1.40312, precision: 0.944 recall: 0.944 f1: 0.944 accuracy: 0.996 
+training batch:   200, loss: 0.97920, precision: 0.935 recall: 0.967 f1: 0.951 accuracy: 0.995 
+training batch:   220, loss: 0.11713, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 1.86516, precision: 0.969 recall: 0.969 f1: 0.969 accuracy: 0.985 
+training batch:   260, loss: 1.35486, precision: 0.879 recall: 0.879 f1: 0.879 accuracy: 0.990 
+training batch:   280, loss: 1.96985, precision: 0.977 recall: 0.956 f1: 0.966 accuracy: 0.996 
+training batch:   300, loss: 1.50574, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.990 
+start evaluate engines...
+label: Dsa, precision: 0.955 recall: 0.941 f1: 0.946 
+label: Chk, precision: 0.691 recall: 0.699 f1: 0.692 
+label: Ins, precision: 0.426 recall: 0.471 f1: 0.437 
+label: Sur, precision: 0.990 recall: 0.976 f1: 0.982 
+label: Med, precision: 0.471 recall: 0.471 f1: 0.471 
+label: Ana, precision: 0.926 recall: 0.943 f1: 0.933 
+time consumption:4.13(min), precision: 0.946 recall: 0.946 f1: 0.946 accuracy: 0.992 
+saved the new best model with f1: 0.946
+epoch:15/100
+training batch:    20, loss: 0.34691, precision: 0.967 recall: 0.967 f1: 0.967 accuracy: 0.999 
+training batch:    40, loss: 1.21375, precision: 0.935 recall: 0.935 f1: 0.935 accuracy: 0.995 
+training batch:    60, loss: 0.71954, precision: 0.968 recall: 0.968 f1: 0.968 accuracy: 0.999 
+training batch:    80, loss: 0.65292, precision: 0.976 recall: 0.976 f1: 0.976 accuracy: 0.998 
+training batch:   100, loss: 4.85463, precision: 0.933 recall: 0.933 f1: 0.933 accuracy: 0.986 
+training batch:   120, loss: 0.60214, precision: 0.972 recall: 0.946 f1: 0.959 accuracy: 0.996 
+training batch:   140, loss: 0.65753, precision: 1.000 recall: 0.976 f1: 0.988 accuracy: 0.998 
+training batch:   160, loss: 1.91891, precision: 0.917 recall: 0.943 f1: 0.930 accuracy: 0.993 
+training batch:   180, loss: 0.29399, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   200, loss: 0.83116, precision: 1.000 recall: 0.966 f1: 0.982 accuracy: 0.999 
+training batch:   220, loss: 0.18646, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 0.58041, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.999 
+training batch:   260, loss: 2.59407, precision: 0.951 recall: 0.951 f1: 0.951 accuracy: 0.990 
+training batch:   280, loss: 0.82391, precision: 0.958 recall: 0.939 f1: 0.948 accuracy: 0.996 
+training batch:   300, loss: 2.48853, precision: 0.800 recall: 1.000 f1: 0.889 accuracy: 0.980 
+start evaluate engines...
+label: Dsa, precision: 0.958 recall: 0.941 f1: 0.948 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.396 recall: 0.440 f1: 0.410 
+label: Sur, precision: 0.977 recall: 0.979 f1: 0.977 
+label: Med, precision: 0.424 recall: 0.434 f1: 0.428 
+label: Ana, precision: 0.941 recall: 0.954 f1: 0.947 
+time consumption:4.15(min), precision: 0.946 recall: 0.948 f1: 0.947 accuracy: 0.992 
+saved the new best model with f1: 0.947
+epoch:16/100
+training batch:    20, loss: 1.18178, precision: 0.955 recall: 0.977 f1: 0.966 accuracy: 0.994 
+training batch:    40, loss: 0.66443, precision: 0.967 recall: 0.967 f1: 0.967 accuracy: 0.999 
+training batch:    60, loss: 4.38733, precision: 0.964 recall: 0.964 f1: 0.964 accuracy: 0.990 
+training batch:    80, loss: 1.86969, precision: 0.930 recall: 0.930 f1: 0.930 accuracy: 0.991 
+training batch:   100, loss: 5.35803, precision: 0.914 recall: 0.842 f1: 0.877 accuracy: 0.991 
+training batch:   120, loss: 0.50845, precision: 0.970 recall: 0.941 f1: 0.955 accuracy: 0.998 
+training batch:   140, loss: 0.88216, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.999 
+training batch:   160, loss: 0.35255, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   180, loss: 4.96790, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.974 
+training batch:   200, loss: 1.15240, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.993 
+training batch:   220, loss: 1.32881, precision: 0.952 recall: 0.952 f1: 0.952 accuracy: 0.996 
+training batch:   240, loss: 1.61943, precision: 0.951 recall: 0.907 f1: 0.929 accuracy: 0.991 
+training batch:   260, loss: 1.88019, precision: 0.968 recall: 0.938 f1: 0.952 accuracy: 0.993 
+training batch:   280, loss: 7.07516, precision: 0.853 recall: 0.829 f1: 0.841 accuracy: 0.968 
+training batch:   300, loss: 1.64417, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.942 recall: 0.950 f1: 0.944 
+label: Chk, precision: 0.681 recall: 0.699 f1: 0.686 
+label: Ins, precision: 0.419 recall: 0.463 f1: 0.433 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.471 recall: 0.471 f1: 0.471 
+label: Ana, precision: 0.948 recall: 0.952 f1: 0.949 
+time consumption:4.17(min), precision: 0.947 recall: 0.957 f1: 0.951 accuracy: 0.992 
+saved the new best model with f1: 0.951
+epoch:17/100
+training batch:    20, loss: 2.19191, precision: 0.879 recall: 0.906 f1: 0.892 accuracy: 0.985 
+training batch:    40, loss: 0.68274, precision: 0.971 recall: 0.917 f1: 0.943 accuracy: 0.995 
+training batch:    60, loss: 0.94708, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.993 
+training batch:    80, loss: 1.44547, precision: 0.944 recall: 0.944 f1: 0.944 accuracy: 0.991 
+training batch:   100, loss: 0.90094, precision: 0.947 recall: 0.947 f1: 0.947 accuracy: 0.991 
+training batch:   120, loss: 0.35083, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   140, loss: 1.04646, precision: 0.971 recall: 0.944 f1: 0.958 accuracy: 0.995 
+training batch:   160, loss: 1.77177, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.995 
+training batch:   180, loss: 1.45427, precision: 0.946 recall: 0.946 f1: 0.946 accuracy: 0.996 
+training batch:   200, loss: 0.26459, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   220, loss: 2.91006, precision: 1.000 recall: 0.946 f1: 0.972 accuracy: 0.993 
+training batch:   240, loss: 1.86610, precision: 0.929 recall: 0.929 f1: 0.929 accuracy: 0.989 
+training batch:   260, loss: 2.63162, precision: 0.884 recall: 0.950 f1: 0.916 accuracy: 0.984 
+training batch:   280, loss: 9.70493, precision: 0.929 recall: 0.951 f1: 0.940 accuracy: 0.954 
+training batch:   300, loss: 1.12097, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.957 recall: 0.919 f1: 0.935 
+label: Chk, precision: 0.637 recall: 0.618 f1: 0.620 
+label: Ins, precision: 0.422 recall: 0.463 f1: 0.432 
+label: Sur, precision: 0.917 recall: 0.912 f1: 0.912 
+label: Med, precision: 0.431 recall: 0.441 f1: 0.435 
+label: Ana, precision: 0.934 recall: 0.941 f1: 0.936 
+time consumption:4.18(min), precision: 0.936 recall: 0.930 f1: 0.933 accuracy: 0.990 
+epoch:18/100
+training batch:    20, loss: 2.16539, precision: 0.925 recall: 0.974 f1: 0.949 accuracy: 0.991 
+training batch:    40, loss: 2.62318, precision: 0.889 recall: 1.000 f1: 0.941 accuracy: 0.993 
+training batch:    60, loss: 0.22127, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.999 
+training batch:    80, loss: 0.54903, precision: 0.968 recall: 0.968 f1: 0.968 accuracy: 0.999 
+training batch:   100, loss: 0.64728, precision: 1.000 recall: 0.978 f1: 0.989 accuracy: 0.999 
+training batch:   120, loss: 0.53047, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   140, loss: 1.05380, precision: 1.000 recall: 0.953 f1: 0.976 accuracy: 0.993 
+training batch:   160, loss: 0.58554, precision: 0.970 recall: 1.000 f1: 0.985 accuracy: 0.999 
+training batch:   180, loss: 0.85345, precision: 0.973 recall: 1.000 f1: 0.986 accuracy: 0.999 
+training batch:   200, loss: 0.53731, precision: 1.000 recall: 0.974 f1: 0.987 accuracy: 0.999 
+training batch:   220, loss: 0.28542, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 2.44261, precision: 0.972 recall: 0.946 f1: 0.959 accuracy: 0.998 
+training batch:   260, loss: 1.13232, precision: 0.947 recall: 1.000 f1: 0.973 accuracy: 0.996 
+training batch:   280, loss: 1.82231, precision: 0.975 recall: 0.975 f1: 0.975 accuracy: 0.991 
+training batch:   300, loss: 0.31042, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.927 recall: 0.950 f1: 0.937 
+label: Chk, precision: 0.701 recall: 0.735 f1: 0.714 
+label: Ins, precision: 0.397 recall: 0.473 f1: 0.420 
+label: Sur, precision: 0.982 recall: 0.984 f1: 0.982 
+label: Med, precision: 0.471 recall: 0.471 f1: 0.471 
+label: Ana, precision: 0.945 recall: 0.963 f1: 0.953 
+time consumption:4.15(min), precision: 0.939 recall: 0.961 f1: 0.950 accuracy: 0.991 
+epoch:19/100
+training batch:    20, loss: 1.19992, precision: 0.909 recall: 0.968 f1: 0.937 accuracy: 0.993 
+training batch:    40, loss: 1.31200, precision: 1.000 recall: 0.973 f1: 0.986 accuracy: 0.993 
+training batch:    60, loss: 1.51997, precision: 0.963 recall: 0.963 f1: 0.963 accuracy: 0.999 
+training batch:    80, loss: 2.24445, precision: 0.972 recall: 0.946 f1: 0.959 accuracy: 0.990 
+training batch:   100, loss: 0.27286, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   120, loss: 1.84601, precision: 0.947 recall: 0.947 f1: 0.947 accuracy: 0.998 
+training batch:   140, loss: 0.47693, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.999 
+training batch:   160, loss: 0.47952, precision: 0.920 recall: 0.958 f1: 0.939 accuracy: 0.998 
+training batch:   180, loss: 0.61310, precision: 0.975 recall: 0.975 f1: 0.975 accuracy: 0.998 
+training batch:   200, loss: 0.25447, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   220, loss: 0.33046, precision: 0.967 recall: 0.967 f1: 0.967 accuracy: 0.999 
+training batch:   240, loss: 0.84294, precision: 0.941 recall: 0.970 f1: 0.955 accuracy: 0.998 
+training batch:   260, loss: 0.25798, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   280, loss: 1.30284, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.994 
+training batch:   300, loss: 1.47522, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.949 recall: 0.961 f1: 0.954 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.426 recall: 0.471 f1: 0.440 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.463 recall: 0.463 f1: 0.463 
+label: Ana, precision: 0.942 recall: 0.941 f1: 0.941 
+time consumption:4.16(min), precision: 0.947 recall: 0.954 f1: 0.950 accuracy: 0.992 
+epoch:20/100
+training batch:    20, loss: 1.82973, precision: 1.000 recall: 0.895 f1: 0.944 accuracy: 0.991 
+training batch:    40, loss: 0.56880, precision: 0.970 recall: 1.000 f1: 0.985 accuracy: 0.999 
+training batch:    60, loss: 0.48590, precision: 0.978 recall: 0.978 f1: 0.978 accuracy: 0.999 
+training batch:    80, loss: 1.10046, precision: 0.931 recall: 0.900 f1: 0.915 accuracy: 0.996 
+training batch:   100, loss: 0.37244, precision: 1.000 recall: 0.975 f1: 0.987 accuracy: 0.999 
+training batch:   120, loss: 1.32013, precision: 0.944 recall: 1.000 f1: 0.971 accuracy: 0.998 
+training batch:   140, loss: 0.13072, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   160, loss: 0.22429, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   180, loss: 0.92015, precision: 0.951 recall: 1.000 f1: 0.975 accuracy: 0.993 
+training batch:   200, loss: 0.70573, precision: 0.926 recall: 0.962 f1: 0.943 accuracy: 0.999 
+training batch:   220, loss: 1.21967, precision: 0.952 recall: 0.952 f1: 0.952 accuracy: 0.996 
+training batch:   240, loss: 0.89467, precision: 0.953 recall: 1.000 f1: 0.976 accuracy: 0.998 
+training batch:   260, loss: 0.49545, precision: 0.972 recall: 1.000 f1: 0.986 accuracy: 0.999 
+training batch:   280, loss: 1.14822, precision: 0.944 recall: 0.944 f1: 0.944 accuracy: 0.994 
+training batch:   300, loss: 3.67725, precision: 0.000 recall: 0.000 f1: 0.000 accuracy: 0.990 
+start evaluate engines...
+label: Dsa, precision: 0.934 recall: 0.964 f1: 0.947 
+label: Chk, precision: 0.711 recall: 0.728 f1: 0.715 
+label: Ins, precision: 0.431 recall: 0.485 f1: 0.449 
+label: Sur, precision: 0.995 recall: 0.993 f1: 0.993 
+label: Med, precision: 0.441 recall: 0.441 f1: 0.441 
+label: Ana, precision: 0.957 recall: 0.953 f1: 0.954 
+time consumption:4.17(min), precision: 0.953 recall: 0.961 f1: 0.957 accuracy: 0.993 
+saved the new best model with f1: 0.957
+epoch:21/100
+training batch:    20, loss: 0.34273, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.999 
+training batch:    40, loss: 0.75313, precision: 0.975 recall: 0.975 f1: 0.975 accuracy: 0.999 
+training batch:    60, loss: 0.25620, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 1.65256, precision: 0.905 recall: 0.950 f1: 0.927 accuracy: 0.990 
+training batch:   100, loss: 0.50436, precision: 1.000 recall: 0.977 f1: 0.988 accuracy: 0.999 
+training batch:   120, loss: 0.14964, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   140, loss: 1.61011, precision: 0.974 recall: 0.949 f1: 0.961 accuracy: 0.994 
+training batch:   160, loss: 1.51437, precision: 0.923 recall: 0.973 f1: 0.947 accuracy: 0.995 
+training batch:   180, loss: 0.29179, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.999 
+training batch:   200, loss: 0.26645, precision: 0.963 recall: 0.963 f1: 0.963 accuracy: 0.999 
+training batch:   220, loss: 1.58174, precision: 0.944 recall: 0.944 f1: 0.944 accuracy: 0.996 
+training batch:   240, loss: 0.84644, precision: 0.976 recall: 1.000 f1: 0.988 accuracy: 0.999 
+training batch:   260, loss: 2.85011, precision: 0.829 recall: 0.829 f1: 0.829 accuracy: 0.984 
+training batch:   280, loss: 1.07364, precision: 0.938 recall: 0.968 f1: 0.952 accuracy: 0.998 
+training batch:   300, loss: 1.31433, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.938 recall: 0.965 f1: 0.950 
+label: Chk, precision: 0.721 recall: 0.735 f1: 0.725 
+label: Ins, precision: 0.431 recall: 0.456 f1: 0.434 
+label: Sur, precision: 0.799 recall: 0.869 f1: 0.829 
+label: Med, precision: 0.488 recall: 0.493 f1: 0.490 
+label: Ana, precision: 0.967 recall: 0.958 f1: 0.962 
+time consumption:4.12(min), precision: 0.927 recall: 0.948 f1: 0.937 accuracy: 0.992 
+epoch:22/100
+training batch:    20, loss: 0.54726, precision: 0.977 recall: 0.977 f1: 0.977 accuracy: 0.999 
+training batch:    40, loss: 0.85068, precision: 0.967 recall: 0.935 f1: 0.951 accuracy: 0.993 
+training batch:    60, loss: 1.34311, precision: 0.871 recall: 0.931 f1: 0.900 accuracy: 0.994 
+training batch:    80, loss: 0.44385, precision: 0.979 recall: 1.000 f1: 0.989 accuracy: 0.999 
+training batch:   100, loss: 1.09093, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.995 
+training batch:   120, loss: 1.17838, precision: 0.976 recall: 0.976 f1: 0.976 accuracy: 0.996 
+training batch:   140, loss: 0.43474, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.999 
+training batch:   160, loss: 0.80780, precision: 0.958 recall: 0.958 f1: 0.958 accuracy: 0.998 
+training batch:   180, loss: 1.09032, precision: 0.951 recall: 0.951 f1: 0.951 accuracy: 0.994 
+training batch:   200, loss: 0.52286, precision: 0.974 recall: 0.974 f1: 0.974 accuracy: 0.995 
+training batch:   220, loss: 0.39832, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   240, loss: 1.51131, precision: 1.000 recall: 0.936 f1: 0.967 accuracy: 0.995 
+training batch:   260, loss: 0.36568, precision: 0.955 recall: 0.955 f1: 0.955 accuracy: 0.999 
+training batch:   280, loss: 0.43024, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.999 
+training batch:   300, loss: 14.95789, precision: 0.800 recall: 0.800 f1: 0.800 accuracy: 0.950 
+start evaluate engines...
+label: Dsa, precision: 0.947 recall: 0.932 f1: 0.937 
+label: Chk, precision: 0.711 recall: 0.735 f1: 0.720 
+label: Ins, precision: 0.409 recall: 0.463 f1: 0.427 
+label: Sur, precision: 0.954 recall: 0.961 f1: 0.955 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.943 recall: 0.966 f1: 0.954 
+time consumption:4.00(min), precision: 0.944 recall: 0.958 f1: 0.951 accuracy: 0.992 
+epoch:23/100
+training batch:    20, loss: 6.68488, precision: 0.921 recall: 0.946 f1: 0.933 accuracy: 0.984 
+training batch:    40, loss: 1.53983, precision: 0.939 recall: 0.939 f1: 0.939 accuracy: 0.998 
+training batch:    60, loss: 1.19458, precision: 0.969 recall: 0.969 f1: 0.969 accuracy: 0.994 
+training batch:    80, loss: 4.89500, precision: 0.968 recall: 0.938 f1: 0.952 accuracy: 0.988 
+training batch:   100, loss: 1.73007, precision: 0.970 recall: 0.941 f1: 0.955 accuracy: 0.988 
+training batch:   120, loss: 0.48276, precision: 0.975 recall: 0.975 f1: 0.975 accuracy: 0.999 
+training batch:   140, loss: 0.27075, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   160, loss: 2.63437, precision: 0.978 recall: 0.978 f1: 0.978 accuracy: 0.996 
+training batch:   180, loss: 0.36275, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   200, loss: 0.73238, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.998 
+training batch:   220, loss: 1.41399, precision: 0.951 recall: 0.975 f1: 0.963 accuracy: 0.991 
+training batch:   240, loss: 0.92645, precision: 0.974 recall: 0.974 f1: 0.974 accuracy: 0.996 
+training batch:   260, loss: 0.19386, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   280, loss: 0.10132, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   300, loss: 1.55469, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.928 recall: 0.972 f1: 0.948 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.431 recall: 0.485 f1: 0.444 
+label: Sur, precision: 0.974 recall: 0.979 f1: 0.976 
+label: Med, precision: 0.500 recall: 0.500 f1: 0.500 
+label: Ana, precision: 0.950 recall: 0.959 f1: 0.954 
+time consumption:3.88(min), precision: 0.950 recall: 0.967 f1: 0.958 accuracy: 0.993 
+saved the new best model with f1: 0.958
+epoch:24/100
+training batch:    20, loss: 1.52887, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.995 
+training batch:    40, loss: 0.38612, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    60, loss: 0.41988, precision: 1.000 recall: 0.968 f1: 0.984 accuracy: 0.994 
+training batch:    80, loss: 2.90933, precision: 0.886 recall: 0.912 f1: 0.899 accuracy: 0.980 
+training batch:   100, loss: 2.37422, precision: 0.925 recall: 1.000 f1: 0.961 accuracy: 0.991 
+training batch:   120, loss: 0.37637, precision: 0.939 recall: 0.969 f1: 0.954 accuracy: 0.998 
+training batch:   140, loss: 0.13896, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   160, loss: 1.04160, precision: 1.000 recall: 0.964 f1: 0.982 accuracy: 0.993 
+training batch:   180, loss: 0.96924, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.994 
+training batch:   200, loss: 0.41533, precision: 0.975 recall: 0.951 f1: 0.963 accuracy: 0.998 
+training batch:   220, loss: 0.20049, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 0.47499, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.995 
+training batch:   260, loss: 0.21722, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   280, loss: 3.31483, precision: 0.925 recall: 0.902 f1: 0.914 accuracy: 0.985 
+training batch:   300, loss: 0.94116, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.932 recall: 0.956 f1: 0.942 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.424 recall: 0.493 f1: 0.447 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.940 recall: 0.957 f1: 0.947 
+time consumption:3.97(min), precision: 0.939 recall: 0.961 f1: 0.950 accuracy: 0.992 
+epoch:25/100
+training batch:    20, loss: 0.80040, precision: 0.974 recall: 0.949 f1: 0.961 accuracy: 0.995 
+training batch:    40, loss: 1.06819, precision: 0.944 recall: 0.971 f1: 0.958 accuracy: 0.998 
+training batch:    60, loss: 0.25940, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 0.36830, precision: 0.974 recall: 0.974 f1: 0.974 accuracy: 0.995 
+training batch:   100, loss: 0.84076, precision: 0.917 recall: 0.943 f1: 0.930 accuracy: 0.984 
+training batch:   120, loss: 0.09659, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   140, loss: 0.55138, precision: 0.971 recall: 0.943 f1: 0.957 accuracy: 0.990 
+training batch:   160, loss: 0.76877, precision: 0.947 recall: 0.973 f1: 0.960 accuracy: 0.998 
+training batch:   180, loss: 0.11737, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   200, loss: 0.19908, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   220, loss: 0.40552, precision: 0.939 recall: 0.969 f1: 0.954 accuracy: 0.998 
+training batch:   240, loss: 0.09566, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   260, loss: 0.97447, precision: 0.973 recall: 0.973 f1: 0.973 accuracy: 0.999 
+training batch:   280, loss: 0.37483, precision: 0.964 recall: 0.931 f1: 0.947 accuracy: 0.998 
+training batch:   300, loss: 0.24133, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.951 recall: 0.947 f1: 0.947 
+label: Chk, precision: 0.706 recall: 0.713 f1: 0.707 
+label: Ins, precision: 0.424 recall: 0.478 f1: 0.437 
+label: Sur, precision: 0.971 recall: 0.988 f1: 0.978 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.961 recall: 0.968 f1: 0.964 
+time consumption:3.89(min), precision: 0.956 recall: 0.965 f1: 0.960 accuracy: 0.993 
+saved the new best model with f1: 0.960
+epoch:26/100
+training batch:    20, loss: 0.04825, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    40, loss: 0.10696, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    60, loss: 0.16711, precision: 0.953 recall: 0.976 f1: 0.965 accuracy: 0.998 
+training batch:    80, loss: 0.72333, precision: 0.929 recall: 0.951 f1: 0.940 accuracy: 0.991 
+training batch:   100, loss: 0.21712, precision: 1.000 recall: 0.964 f1: 0.982 accuracy: 0.999 
+training batch:   120, loss: 0.13641, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   140, loss: 0.92632, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.981 
+training batch:   160, loss: 0.82510, precision: 0.964 recall: 0.931 f1: 0.947 accuracy: 0.998 
+training batch:   180, loss: 0.66342, precision: 0.971 recall: 1.000 f1: 0.986 accuracy: 0.995 
+training batch:   200, loss: 0.60222, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.999 
+training batch:   220, loss: 0.28552, precision: 1.000 recall: 0.971 f1: 0.985 accuracy: 0.999 
+training batch:   240, loss: 0.33954, precision: 0.958 recall: 0.958 f1: 0.958 accuracy: 0.994 
+training batch:   260, loss: 1.06549, precision: 0.962 recall: 0.962 f1: 0.962 accuracy: 0.998 
+training batch:   280, loss: 0.40714, precision: 0.977 recall: 1.000 f1: 0.989 accuracy: 0.998 
+training batch:   300, loss: 0.01306, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.944 recall: 0.955 f1: 0.948 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.466 recall: 0.478 f1: 0.461 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.948 recall: 0.954 f1: 0.950 
+time consumption:3.89(min), precision: 0.949 recall: 0.961 f1: 0.955 accuracy: 0.993 
+epoch:27/100
+training batch:    20, loss: 0.03911, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    40, loss: 0.49275, precision: 1.000 recall: 0.979 f1: 0.989 accuracy: 0.999 
+training batch:    60, loss: 0.18335, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 0.02457, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   100, loss: 0.17400, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   120, loss: 0.22324, precision: 0.976 recall: 1.000 f1: 0.988 accuracy: 0.999 
+training batch:   140, loss: 0.06200, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   160, loss: 0.36050, precision: 1.000 recall: 0.979 f1: 0.989 accuracy: 0.999 
+training batch:   180, loss: 0.43402, precision: 0.977 recall: 0.977 f1: 0.977 accuracy: 0.999 
+training batch:   200, loss: 0.90828, precision: 0.970 recall: 0.970 f1: 0.970 accuracy: 0.999 
+training batch:   220, loss: 0.94246, precision: 0.975 recall: 1.000 f1: 0.987 accuracy: 0.998 
+training batch:   240, loss: 0.94647, precision: 0.946 recall: 0.946 f1: 0.946 accuracy: 0.996 
+training batch:   260, loss: 1.35364, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 0.998 
+training batch:   280, loss: 0.35794, precision: 0.972 recall: 1.000 f1: 0.986 accuracy: 0.999 
+training batch:   300, loss: 0.55457, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.947 recall: 0.963 f1: 0.954 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.441 recall: 0.500 f1: 0.460 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.952 recall: 0.964 f1: 0.958 
+time consumption:3.94(min), precision: 0.952 recall: 0.968 f1: 0.960 accuracy: 0.993 
+epoch:28/100
+training batch:    20, loss: 0.49242, precision: 0.935 recall: 0.967 f1: 0.951 accuracy: 0.998 
+training batch:    40, loss: 1.08685, precision: 0.953 recall: 0.976 f1: 0.965 accuracy: 0.988 
+training batch:    60, loss: 0.81531, precision: 0.962 recall: 0.926 f1: 0.943 accuracy: 0.996 
+training batch:    80, loss: 0.25644, precision: 0.969 recall: 0.969 f1: 0.969 accuracy: 0.999 
+training batch:   100, loss: 0.29323, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   120, loss: 0.59312, precision: 0.969 recall: 1.000 f1: 0.984 accuracy: 0.999 
+training batch:   140, loss: 0.19864, precision: 0.969 recall: 1.000 f1: 0.984 accuracy: 0.999 
+training batch:   160, loss: 0.10295, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   180, loss: 0.71515, precision: 0.946 recall: 0.972 f1: 0.959 accuracy: 0.996 
+training batch:   200, loss: 1.19279, precision: 1.000 recall: 0.900 f1: 0.947 accuracy: 0.996 
+training batch:   220, loss: 0.12396, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 0.60997, precision: 0.959 recall: 0.979 f1: 0.969 accuracy: 0.998 
+training batch:   260, loss: 0.03972, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   280, loss: 0.23164, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   300, loss: 0.03113, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.943 recall: 0.950 f1: 0.945 
+label: Chk, precision: 0.721 recall: 0.735 f1: 0.725 
+label: Ins, precision: 0.461 recall: 0.478 f1: 0.461 
+label: Sur, precision: 0.980 recall: 0.994 f1: 0.986 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.959 recall: 0.949 f1: 0.953 
+time consumption:3.91(min), precision: 0.958 recall: 0.959 f1: 0.958 accuracy: 0.993 
+epoch:29/100
+training batch:    20, loss: 0.30450, precision: 0.974 recall: 1.000 f1: 0.987 accuracy: 0.999 
+training batch:    40, loss: 0.17737, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    60, loss: 0.26128, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:    80, loss: 1.23393, precision: 0.905 recall: 1.000 f1: 0.950 accuracy: 0.990 
+training batch:   100, loss: 0.29740, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   120, loss: 2.29596, precision: 0.971 recall: 0.919 f1: 0.944 accuracy: 0.990 
+training batch:   140, loss: 0.50641, precision: 1.000 recall: 0.950 f1: 0.974 accuracy: 0.995 
+training batch:   160, loss: 0.47917, precision: 0.973 recall: 1.000 f1: 0.986 accuracy: 0.999 
+training batch:   180, loss: 0.38533, precision: 0.978 recall: 0.978 f1: 0.978 accuracy: 0.999 
+training batch:   200, loss: 1.75381, precision: 0.886 recall: 0.912 f1: 0.899 accuracy: 0.991 
+training batch:   220, loss: 0.35294, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   240, loss: 0.17618, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   260, loss: 1.35799, precision: 1.000 recall: 0.966 f1: 0.982 accuracy: 0.996 
+training batch:   280, loss: 0.06561, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   300, loss: 0.46875, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.931 recall: 0.950 f1: 0.940 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.441 recall: 0.456 f1: 0.440 
+label: Sur, precision: 0.985 recall: 0.984 f1: 0.984 
+label: Med, precision: 0.490 recall: 0.500 f1: 0.494 
+label: Ana, precision: 0.957 recall: 0.972 f1: 0.964 
+time consumption:3.90(min), precision: 0.953 recall: 0.967 f1: 0.960 accuracy: 0.993 
+epoch:30/100
+training batch:    20, loss: 0.19624, precision: 0.969 recall: 0.969 f1: 0.969 accuracy: 0.999 
+training batch:    40, loss: 2.82181, precision: 0.957 recall: 0.978 f1: 0.967 accuracy: 0.985 
+training batch:    60, loss: 0.31030, precision: 0.964 recall: 0.931 f1: 0.947 accuracy: 0.998 
+training batch:    80, loss: 1.14523, precision: 0.971 recall: 0.971 f1: 0.971 accuracy: 0.994 
+training batch:   100, loss: 0.42514, precision: 1.000 recall: 0.969 f1: 0.984 accuracy: 0.996 
+training batch:   120, loss: 0.19348, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   140, loss: 2.37381, precision: 0.921 recall: 0.921 f1: 0.921 accuracy: 0.983 
+training batch:   160, loss: 0.27657, precision: 0.971 recall: 1.000 f1: 0.985 accuracy: 0.999 
+training batch:   180, loss: 2.32292, precision: 0.963 recall: 0.897 f1: 0.929 accuracy: 0.993 
+training batch:   200, loss: 0.02084, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   220, loss: 0.69029, precision: 0.958 recall: 1.000 f1: 0.979 accuracy: 0.996 
+training batch:   240, loss: 1.75076, precision: 1.000 recall: 0.969 f1: 0.984 accuracy: 0.998 
+training batch:   260, loss: 0.03789, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   280, loss: 0.01933, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+training batch:   300, loss: 0.04126, precision: 1.000 recall: 1.000 f1: 1.000 accuracy: 1.000 
+start evaluate engines...
+label: Dsa, precision: 0.924 recall: 0.958 f1: 0.939 
+label: Chk, precision: 0.721 recall: 0.728 f1: 0.721 
+label: Ins, precision: 0.456 recall: 0.478 f1: 0.456 
+label: Sur, precision: 0.975 recall: 0.989 f1: 0.981 
+label: Med, precision: 0.461 recall: 0.471 f1: 0.465 
+label: Ana, precision: 0.968 recall: 0.960 f1: 0.963 
+time consumption:3.92(min), precision: 0.952 recall: 0.964 f1: 0.958 accuracy: 0.992 
+early stopped, no progress obtained within 5 epochs
+overall best f1 is 0.9603219577089478 at 25 epoch
+total training time consumption: 121.712(min)

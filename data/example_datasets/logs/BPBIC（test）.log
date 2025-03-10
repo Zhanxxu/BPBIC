@@ -1,0 +1,62 @@
+2022-10-10 13:05:41
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY++++++++++++++++++++++++++++++++++++++++
+ Status:
+     mode                 : test
+ ++++++++++++++++++++++++++++++++++++++++
+ Datasets:
+     datasets         fold: data/example_datasets/datasets
+     train            file: train.csv
+     validation       file: None
+     vocab             dir: data/example_datasets/vocab
+     delimiter            : b
+     use  pretrained model: True
+     pretrained      model: Bert
+     finetune             : False
+     use    middle   model: True
+     middle          model: bilstm+idcnn
+     checkpoints       dir: checkpoints/BPBIC
+     log               dir: data/example_datasets/logs
+ ++++++++++++++++++++++++++++++++++++++++
+Labeling Scheme:
+     label          scheme: BIO
+     label           level: 2
+     suffixes             : ['Dsa', 'Chk', 'Ins', 'Sur', 'Med', 'Ana']
+     measuring     metrics: ['precision', 'recall', 'f1', 'accuracy']
+ ++++++++++++++++++++++++++++++++++++++++
+Model Configuration:
+     embedding         dim: 100
+     max  sequence  length: 100
+     hidden            dim: 128
+     filter           nums: 64
+     idcnn            nums: 3
+     CUDA  VISIBLE  DEVICE: 0
+     seed                 : 23
+ ++++++++++++++++++++++++++++++++++++++++
+ Training Settings:
+     epoch                : 100
+     batch            size: 8
+     dropout              : 0.3
+     learning         rate: 0.001
+     optimizer            : Adam
+     use               gan: True
+     gan            method: pgd
+     checkpoint       name: model_our
+     max       checkpoints: 3
+     print       per_batch: 1
+     is     early     stop: True
+     patient              : 5
+++++++++++++++++++++++++++++++++++++++++CONFIGURATION SUMMARY END++++++++++++++++++++++++++++++++++++++++
+label vocab files not exist, building label vocab...
+dataManager initialed...
+mode: test
+loading model parameter
+loading model successfully
+loading data...
+label: Dsa, precision: 0.971 recall: 0.940 f1: 0.954 
+label: Chk, precision: 0.932 recall: 0.901 f1: 0.909 
+label: Ins, precision: 0.656 recall: 0.625 f1: 0.635 
+label: Sur, precision: 0.943 recall: 0.960 f1: 0.950 
+label: Med, precision: 0.797 recall: 0.771 f1: 0.772 
+label: Ana, precision: 0.940 recall: 0.946 f1: 0.943 
+time consumption:2.42(min), precision: 0.956 recall: 0.950 f1: 0.953 accuracy: 0.991 
+
